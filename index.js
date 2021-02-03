@@ -43,6 +43,17 @@ app.post("/auth/login", (req, res) => {
   }
 });
 
+app.post("/backoffice/user", (req, res) => {
+  console.log("=======================>>> ",req.body)
+  if (req.body.username === "boonpat.papob@gmail.com") {
+    res.status(200);
+    res.json(insight.success);
+  } else {
+    res.status(404);
+    res.json(insight.failed);
+  }
+});
+
 app.get("/v1/justforyou/insights/header", (req, res) => {
   res.json(insightHeader);
 });
