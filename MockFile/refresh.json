@@ -1,0 +1,9 @@
+{
+  "success": {
+    "refresh_token": "Bearer strongiOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2NvZGUiOiIxIiwibmFtZSI6IkpvaG4gRG9lIiwiYWNjZXNzX2xldmVsIjoxLCJpYXQiOjE1MTYyMzkwMjJ9.Q6vveOborgZnSKlDxOFE04sBd7jy9dMl4Od-1CUNtCQ"
+  },
+  "failed": {
+    "error_code": "3",
+    "message": "User is not found"
+  }
+}

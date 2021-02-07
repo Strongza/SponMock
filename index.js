@@ -4,6 +4,7 @@ const mockTest = require("./MockFile/test.json");
 const mockTestErr = require("./MockFile/test_err.json");
 const insight = require("./MockFile/insight.json");
 const insightHeader = require("./MockFile/insightHeader.json");
+const refresh = require("./MockFile/refresh.json");
 
 const app = express();
 
@@ -30,10 +31,11 @@ let enable = {
 app.use(function (req, res, next) {
   console.log("method: " + req.method);
   console.log("url: " + req.url);
+  console.log("header:" + JSON.stringify(req.headers, null, 2));
   console.log("body: " + JSON.stringify(req.body, null, 2));
   next();
 });
-app.post("/auth/login", (req, res) => {
+app.post("/backoffice/auth/login", (req, res) => {
   if (req.body.username === "boonpat.papob@gmail.com") {
     res.status(200);
     res.json(insight.success);
@@ -52,6 +54,24 @@ app.post("/backoffice/user", (req, res) => {
     res.status(404);
     res.json(insight.failed);
   }
+});
+
+app.get("/backoffice/users", (req, res) => {
+  if (
+    req.headers.authorization ==
+    "Bearer strongiOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2NvZGUiOiIxIiwibmFtZSI6IkpvaG4gRG9lIiwiYWNjZXNzX2xldmVsIjoxLCJpYXQiOjE1MTYyMzkwMjJ9.Q6vveOborgZnSKlDxOFE04sBd7jy9dMl4Od-1CUNtCQ"
+  ) {
+    res.status(200);
+    res.json(insight.success);
+  } else {
+    res.status(401);
+    res.json(insight.success);
+  }
+});
+
+app.post("/backoffice/login/refresh", (req, res) => {
+  res.status(200);
+  res.json(refresh.success);
 });
 
 app.get("/v1/justforyou/insights/header", (req, res) => {
