@@ -2,9 +2,14 @@ const express = require("express");
 const cors = require("cors");
 const mockTest = require("./MockFile/test.json");
 const mockTestErr = require("./MockFile/test_err.json");
-const insight = require("./MockFile/insight.json");
-const insightHeader = require("./MockFile/insightHeader.json");
-const refresh = require("./MockFile/refresh.json");
+
+// const insight = require("./MockFile/insight.json");
+// const insightHeader = require("./MockFile/insightHeader.json");
+// const refresh = require("./MockFile/refresh.json");
+
+const action = require("./Model/model");
+const Login = require("./Mock/login");
+const User = require("./Mock/user");
 
 const app = express();
 
@@ -38,15 +43,20 @@ app.use(function (req, res, next) {
 app.post("/backoffice/auth/login", (req, res) => {
   if (req.body.username === "boonpat.papob@gmail.com") {
     res.status(200);
-    res.json(insight.success);
+    res.json(Login.loginMock(action.SUCCESS));
   } else {
     res.status(404);
-    res.json(insight.failed);
+    res.json(Login.loginMock(action.FAILED));
   }
 });
 
+app.post("/backoffice/login/refresh", (req, res) => {
+  res.status(200);
+  res.json(Login.loginRefresh(action.SUCCESS));
+});
+
 app.post("/backoffice/user", (req, res) => {
-  console.log("=======================>>> ",req.body)
+  console.log("=======================>>> ", req.body);
   if (req.body.username === "boonpat.papob@gmail.com") {
     res.status(200);
     res.json(insight.success);
@@ -59,32 +69,17 @@ app.post("/backoffice/user", (req, res) => {
 app.get("/backoffice/users", (req, res) => {
   if (
     req.headers.authorization ==
-    "Bearer strongiOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2NvZGUiOiIxIiwibmFtZSI6IkpvaG4gRG9lIiwiYWNjZXNzX2xldmVsIjoxLCJpYXQiOjE1MTYyMzkwMjJ9.Q6vveOborgZnSKlDxOFE04sBd7jy9dMl4Od-1CUNtCQ"
+    Login.loginRefresh(action.SUCCESS).refresh_token
   ) {
     res.status(200);
-    res.json(insight.success);
+    res.json(User.getUser(action.SUCCESS));
+    // res.status(400);
+    // res.json(User.getUser(action.FAILED));
   } else {
     res.status(401);
-    res.json(insight.success);
+    res.json();
   }
 });
 
-app.post("/backoffice/login/refresh", (req, res) => {
-  res.status(200);
-  res.json(refresh.success);
-});
-
-app.get("/v1/justforyou/insights/header", (req, res) => {
-  res.json(insightHeader);
-});
-
-app.get("/justforyou/api/test", (req, res) => {
-  // console.log(res);
-  res.json(mockTest);
-});
-
-app.post("/justforyou/api/", (req, res) => {
-  res.json(insight);
-});
 const port = process.env.PORT || 64822;
 app.listen(port, () => console.log(`Listening on port${port}...`));
