@@ -8,8 +8,18 @@ const mockTestErr = require("./MockFile/test_err.json");
 // const refresh = require("./MockFile/refresh.json");
 
 const action = require("./Model/model");
-const Login = require("./Mock/login");
-const User = require("./Mock/user");
+const Login = require("./Mock/Login");
+const User = require("./Mock/User");
+const Client = require("./Mock/Client");
+const flowAction = require("./Model/apiFlow");
+
+let flow = {
+  isStaff: true,
+  login: flowAction.SUCCESS,
+  getRefreshToken: flowAction.SUCCESS,
+  getUser: flowAction.EXPIRED,
+  getCustomers: flowAction.EXPIRED,
+};
 
 const app = express();
 
@@ -29,10 +39,6 @@ app.use(express.json());
 //   next();
 // });
 
-let enable = {
-  login: 2,
-};
-
 app.use(function (req, res, next) {
   console.log("method: " + req.method);
   console.log("url: " + req.url);
@@ -40,19 +46,84 @@ app.use(function (req, res, next) {
   console.log("body: " + JSON.stringify(req.body, null, 2));
   next();
 });
+
 app.post("/backoffice/auth/login", (req, res) => {
-  if (req.body.username === "boonpat.papob@gmail.com") {
-    res.status(200);
-    res.json(Login.loginMock(action.SUCCESS));
-  } else {
-    res.status(404);
-    res.json(Login.loginMock(action.FAILED));
+  switch (flow.login) {
+    case flowAction.SUCCESS:
+      if (flow.isStaff) {
+        res.status(200);
+        res.json(Login.loginStaffMock(action.SUCCESS));
+      } else {
+        res.status(200);
+        res.json(Login.loginMock(action.SUCCESS));
+      }
+      break;
+    default:
+      res.status(404);
+      res.json(Login.loginMock(action.FAILED));
+      break;
   }
 });
 
 app.post("/backoffice/login/refresh", (req, res) => {
-  res.status(200);
-  res.json(Login.loginRefresh(action.SUCCESS));
+  switch (flow.getRefreshToken) {
+    case flowAction.SUCCESS:
+      res.status(200);
+      res.json(Login.loginRefresh(action.SUCCESS));
+      break;
+    default:
+      res.status(401);
+      break;
+  }
+});
+
+app.get("/backoffice/customers", (req, res) => {
+  switch (flow.getCustomers) {
+    case flowAction.SUCCESS:
+      res.status(200);
+      res.json(Client.getClient(action.SUCCESS));
+      break;
+    case flowAction.EXPIRED:
+      if (
+        req.headers.authorization ==
+        Login.loginRefresh(action.SUCCESS).refresh_token
+      ) {
+        res.status(200);
+        res.json(Client.getClient(action.SUCCESS));
+      } else {
+        res.status(401);
+        res.json();
+      }
+    default:
+      res.status(404);
+      res.json(Client.getClient(action.FAILED));
+      break;
+  }
+});
+
+app.get("/backoffice/users", (req, res) => {
+  switch (flow.getUser) {
+    case flowAction.SUCCESS:
+      res.status(200);
+      res.json(User.getUser(action.SUCCESS));
+      break;
+    case flowAction.EXPIRED:
+      if (
+        req.headers.authorization ==
+        Login.loginRefresh(action.SUCCESS).refresh_token
+      ) {
+        res.status(200);
+        res.json(User.getUser(action.SUCCESS));
+      } else {
+        res.status(401);
+        res.json();
+      }
+      break;
+    default:
+      res.status(401);
+      res.json();
+      break;
+  }
 });
 
 app.post("/backoffice/user", (req, res) => {
@@ -63,21 +134,6 @@ app.post("/backoffice/user", (req, res) => {
   } else {
     res.status(404);
     res.json(insight.failed);
-  }
-});
-
-app.get("/backoffice/users", (req, res) => {
-  if (
-    req.headers.authorization ==
-    Login.loginRefresh(action.SUCCESS).refresh_token
-  ) {
-    res.status(200);
-    res.json(User.getUser(action.SUCCESS));
-    // res.status(400);
-    // res.json(User.getUser(action.FAILED));
-  } else {
-    res.status(401);
-    res.json();
   }
 });
 
