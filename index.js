@@ -11,6 +11,7 @@ const action = require("./Model/model");
 const Login = require("./Mock/Login");
 const User = require("./Mock/User");
 const Client = require("./Mock/Client");
+const VideoGame = require("./Mock/videoGame");
 const flowAction = require("./Model/apiFlow");
 
 let flow = {
@@ -19,6 +20,7 @@ let flow = {
   getRefreshToken: flowAction.SUCCESS,
   getUser: flowAction.EXPIRED,
   getCustomers: flowAction.EXPIRED,
+  postAddGame: flowAction.FAILED,
 };
 
 const app = express();
@@ -134,6 +136,19 @@ app.post("/backoffice/user", (req, res) => {
   } else {
     res.status(404);
     res.json(insight.failed);
+  }
+});
+
+app.post("/backoffice/video_game", (req, res) => {
+  switch (flow.postAddGame) {
+    case flowAction.SUCCESS:
+      res.status(200);
+      res.json();
+      break;
+    default:
+      res.status(400);
+      res.json(VideoGame.postAddGame(action.FAILED));
+      break;
   }
 });
 
