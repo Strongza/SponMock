@@ -3,6 +3,9 @@ const cors = require("cors");
 const mockTest = require("./MockFile/test.json");
 const mockTestErr = require("./MockFile/test_err.json");
 
+const sponsorMock = require("./MockFile/Sponsor.json");
+const brandMock = require("./MockFile/Brand.json");
+
 // const insight = require("./MockFile/insight.json");
 // const insightHeader = require("./MockFile/insightHeader.json");
 // const refresh = require("./MockFile/refresh.json");
@@ -21,6 +24,9 @@ let flow = {
   getUser: flowAction.EXPIRED,
   getCustomers: flowAction.EXPIRED,
   postAddGame: flowAction.FAILED,
+  getSponsor: flowAction.SUCCESS,
+  getSponsorShipAssets: flowAction.SUCCESS,
+  postBrandSearch: flowAction.SUCCESS,
 };
 
 const app = express();
@@ -148,6 +154,49 @@ app.post("/backoffice/video_game", (req, res) => {
     default:
       res.status(400);
       res.json(VideoGame.postAddGame(action.FAILED));
+      break;
+  }
+});
+
+app.get("/backoffice/customers/55655959595/sponsorships/", (req, res) => {
+  console.log("innnnnnnnnnnnnnnnn");
+  switch (flow.getSponsor) {
+    case flowAction.SUCCESS:
+      res.status(200);
+      res.json(sponsorMock.Get_success);
+      break;
+    default:
+      break;
+  }
+});
+
+app.get("/backoffice/sponsorships/assets/", (req, res) => {
+  switch (flow.getSponsorShipAssets) {
+    case flowAction.SUCCESS:
+      res.status(200);
+      res.json(sponsorMock.Get_Assets_Success);
+      break;
+    default:
+      break;
+  }
+});
+
+app.post("/backoffice/brands/search/", (req, res) => {
+  switch (flow.postBrandSearch) {
+    case flowAction.SUCCESS:
+      let data =
+        req.body.brand_name !== ""
+          ? brandMock.Brand_Search_Success.filter((el) => {
+              return el.name
+                .toLocaleLowerCase()
+                .includes(req.body.brand_name.toLocaleLowerCase());
+            })
+          : undefined;
+
+      res.status(200);
+      res.json(data);
+      break;
+    default:
       break;
   }
 });

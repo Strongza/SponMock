@@ -1,0 +1,32 @@
+{
+  "Brand_Search_Success": [
+    {
+      "brand_code": "somethinguuid",
+      "name": "Mc Donalds",
+      "website": "www.something.com",
+      "country": "Canada",
+      "icon_url": "https://bucket-name.s3-region.amazonaws.com/brand-logos/brand-code/filename.jpg"
+    },
+    {
+      "brand_code": "somethinguuid",
+      "name": "Nike",
+      "website": "www.something.com",
+      "country": "Canada",
+      "icon_url": "https://bucket-name.s3-region.amazonaws.com/brand-logos/brand-code/filename.jpg"
+    },
+    {
+      "brand_code": "somethinguuid",
+      "name": "Mc jeans",
+      "website": "www.something.com",
+      "country": "Canada",
+      "icon_url": "https://bucket-name.s3-region.amazonaws.com/brand-logos/brand-code/filename.jpg"
+    },
+    {
+      "brand_code": "somethinguuid",
+      "name": "Addidas",
+      "website": "www.something.com",
+      "country": "Canada",
+      "icon_url": "https://bucket-name.s3-region.amazonaws.com/brand-logos/brand-code/filename.jpg"
+    }
+  ]
+}

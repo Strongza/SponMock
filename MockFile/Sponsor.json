@@ -1,0 +1,59 @@
+{
+  "Get_success": [
+    {
+      "brand": {
+        "brand_code": "somethinguuid",
+        "name": "Mc Donalds",
+        "website": "www.something.com",
+        "icon_url": "https://image.shutterstock.com/image-photo/kiev-ukraine-march-31-2015-260nw-275940803.jpg"
+      },
+      "contract": {
+        "contract_value": "100.25",
+        "initial_date": "2013-10-07T08:23:19.120Z",
+        "expiration_date": "2013-10-07T08:23:19.120Z",
+        "asset_category": "Naming Rights",
+        "asset_name": "Tournament Naming"
+      }
+    },
+    {
+      "brand": {
+        "brand_code": "somethinguuid",
+        "name": "Mc Donalds",
+        "website": "www.something.com",
+        "icon_url": "https://image.shutterstock.com/image-photo/kiev-ukraine-march-31-2015-260nw-275940803.jpg"
+      },
+      "contract": {
+        "contract_value": "100.25",
+        "initial_date": "2013-10-07T08:23:19.120Z",
+        "expiration_date": "2013-10-07T08:23:19.120Z",
+        "asset_category": "Naming Rights",
+        "asset_name": "Tournament Naming"
+      }
+    }
+  ],
+  "Get_Assets_Success": {
+    "TV Broadcast & OTT": [
+      "Shirt",
+      "Sleeves",
+      "Training Kit",
+      "Ring Mat",
+      "Ring Corner",
+      "Trunks",
+      "Octagon Canvas",
+      "Cage Padding",
+      "Shorts",
+      "F1 Car",
+      "MotoGP Bike",
+      "Nascar Car"
+    ],
+    "Ticketing & Hospitality": ["Ticketing", "Coporate Hospitality"],
+    "Charity & Community": [
+      "Community Events",
+      "Scholarship Funds",
+      "Athlete Appearances",
+      "Charity Sport Tournament",
+      "Giveaways",
+      "Fundraisers"
+    ]
+  }
+}
