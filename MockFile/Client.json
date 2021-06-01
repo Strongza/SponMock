@@ -1,0 +1,115 @@
+{
+  "Get_Client_List_success": [
+    {
+      "company_name": "Chelsea FC1",
+      "territory": "Canada's Yukon Territory1",
+      "country": "Canada",
+      "sport": "Football1",
+      "customer_code": "CUS001",
+      "manager": {
+        "manager_code": "uuid",
+        "name": "Frank Lampard1"
+      }
+    },
+    {
+      "company_name": "Chelsea FC2",
+      "territory": "Canada's Yukon Territory2",
+      "country": "Canada",
+      "sport": "Football2",
+      "customer_code": "CUS001",
+      "manager": {
+        "manager_code": "uuid",
+        "name": "Frank Lampard2"
+      }
+    },
+    {
+      "company_name": "Chelsea FC3",
+      "territory": "Canada's Yukon Territory3",
+      "country": "Canada",
+      "sport": "Football3",
+      "customer_code": "CUS001",
+      "manager": {
+        "manager_code": "uuid",
+        "name": "Frank Lampard3"
+      }
+    },
+    {
+      "company_name": "Chelsea FC4",
+      "territory": "Canada's Yukon Territory4",
+      "country": "Canada",
+      "sport": "Football4",
+      "customer_code": "CUS001",
+      "manager": {
+        "manager_code": "uuid",
+        "name": "Frank Lampard4"
+      }
+    }
+  ],
+  "Get_Customer_Home_success": {
+    "users": [
+      {
+        "user_code": "someuuid",
+        "name": "Firstname Lastname",
+        "username": "something",
+        "phone_number": "0812345678"
+      },
+      {
+        "user_code": "someuuid",
+        "name": "Firstname Lastname2",
+        "username": "something",
+        "phone_number": "0812345678"
+      },
+      {
+        "user_code": "someuuid",
+        "name": "Firstname Lastname3",
+        "username": "something",
+        "phone_number": "0812345678"
+      }
+    ],
+    "customer": {
+      "company_name": "Chelsea FC",
+      "territory": "Asia",
+      "country": "Thailand",
+      "sport": "Football",
+      "logo_url": "https://upload.wikimedia.org/wikipedia/fr/thumb/5/51/Logo_Chelsea.svg/1200px-Logo_Chelsea.svg.png"
+    },
+    "sponsors": [
+      {
+        "sponsorship_code": "someuuid",
+        "brand_icon": "https://upload.wikimedia.org/wikipedia/commons/1/17/Beats_Electronics_logo.svg",
+        "brand_name": "Nike",
+        "value": "1234.555"
+      },
+      {
+        "sponsorship_code": "someuuid",
+        "brand_icon": "https://upload.wikimedia.org/wikipedia/commons/1/17/Beats_Electronics_logo.svg",
+        "brand_name": "Nike",
+        "value": "1234.555"
+      },
+      {
+        "sponsorship_code": "someuuid",
+        "brand_icon": "https://upload.wikimedia.org/wikipedia/commons/1/17/Beats_Electronics_logo.svg",
+        "brand_name": "Nike",
+        "value": "1234.555"
+      },
+      {
+        "sponsorship_code": "someuuid",
+        "brand_icon": "http://pngimg.com/uploads/nike/nike_PNG11.png",
+        "brand_name": "Nike",
+        "value": "1234.555"
+      },
+      {
+        "sponsorship_code": "someuuid",
+        "brand_icon": "https://iconape.com/wp-content/png_logo_vector/sure.png",
+        "brand_name": "Nike",
+        "value": "1234.555"
+      }
+    ],
+    "fixture": {
+      "fixture_code": "someuuid",
+      "fixture_name": "Chelsea Man. Utd",
+      "local_event": "local event",
+      "event_date": "2021-05-26T07:35:07+0000"
+    }
+  }
+}

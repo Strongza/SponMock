@@ -5,6 +5,7 @@ const mockTestErr = require("./MockFile/test_err.json");
 
 const sponsorMock = require("./MockFile/Sponsor.json");
 const brandMock = require("./MockFile/Brand.json");
+const clientMock = require("./MockFile/Client.json");
 
 // const insight = require("./MockFile/insight.json");
 // const insightHeader = require("./MockFile/insightHeader.json");
@@ -21,12 +22,13 @@ let flow = {
   isStaff: true,
   login: flowAction.SUCCESS,
   getRefreshToken: flowAction.SUCCESS,
-  getUser: flowAction.EXPIRED,
-  getCustomers: flowAction.EXPIRED,
+  getUser: flowAction.SUCCESS,
+  getCustomers: flowAction.SUCCESS,
   postAddGame: flowAction.FAILED,
   getSponsor: flowAction.SUCCESS,
   getSponsorShipAssets: flowAction.SUCCESS,
   postBrandSearch: flowAction.SUCCESS,
+  getCustomersHome: flowAction.SUCCESS,
 };
 
 const app = express();
@@ -89,7 +91,7 @@ app.get("/backoffice/customers", (req, res) => {
   switch (flow.getCustomers) {
     case flowAction.SUCCESS:
       res.status(200);
-      res.json(Client.getClient(action.SUCCESS));
+      res.json(clientMock.Get_Client_List_success);
       break;
     case flowAction.EXPIRED:
       if (
@@ -105,6 +107,18 @@ app.get("/backoffice/customers", (req, res) => {
     default:
       res.status(404);
       res.json(Client.getClient(action.FAILED));
+      break;
+  }
+});
+
+app.get("/backoffice/customers/:id/home/", (req, res) => {
+  switch (flow.getCustomersHome) {
+    case flowAction.SUCCESS:
+      res.status(200);
+      res.json(clientMock.Get_Customer_Home_success);
+      break;
+
+    default:
       break;
   }
 });
@@ -162,6 +176,7 @@ app.get("/backoffice/customers/55655959595/sponsorships/", (req, res) => {
   console.log("innnnnnnnnnnnnnnnn");
   switch (flow.getSponsor) {
     case flowAction.SUCCESS:
+      console.log(sponsorMock.Get_success);
       res.status(200);
       res.json(sponsorMock.Get_success);
       break;
