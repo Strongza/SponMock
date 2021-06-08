@@ -6,6 +6,7 @@ const mockTestErr = require("./MockFile/test_err.json");
 const sponsorMock = require("./MockFile/Sponsor.json");
 const brandMock = require("./MockFile/Brand.json");
 const clientMock = require("./MockFile/Client.json");
+const countriesMock = require("./MockFile/Countries.json");
 
 // const insight = require("./MockFile/insight.json");
 // const insightHeader = require("./MockFile/insightHeader.json");
@@ -29,6 +30,7 @@ let flow = {
   getSponsorShipAssets: flowAction.SUCCESS,
   postBrandSearch: flowAction.SUCCESS,
   getCustomersHome: flowAction.SUCCESS,
+  getCounties: flowAction.SUCCESS,
 };
 
 const app = express();
@@ -190,6 +192,17 @@ app.get("/backoffice/sponsorships/assets/", (req, res) => {
     case flowAction.SUCCESS:
       res.status(200);
       res.json(sponsorMock.Get_Assets_Success);
+      break;
+    default:
+      break;
+  }
+});
+
+app.get("/backoffice/countries/", (req, res) => {
+  switch (flow.getCounties) {
+    case flowAction.SUCCESS:
+      res.status(200);
+      res.json(countriesMock.Get_Countries_success);
       break;
     default:
       break;

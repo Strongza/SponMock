@@ -1,0 +1,24 @@
+{
+  "Get_Countries_success": [
+    {
+      "continent_code": "someuuid",
+      "continent_name": "Asia",
+      "countries": [
+        {
+          "country_code": "someuuid",
+          "name": "Thailand"
+        }
+      ]
+    },
+    {
+      "continent_code": "someuuid",
+      "continent_name": "America",
+      "countries": [
+        {
+          "country_code": "someuuid",
+          "name": "Thailand"
+        }
+      ]
+    }
+  ]
+}
