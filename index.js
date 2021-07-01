@@ -1,5 +1,7 @@
 const express = require("express");
 const cors = require("cors");
+const multer = require("multer");
+const upload = multer();
 const mockTest = require("./MockFile/test.json");
 const mockTestErr = require("./MockFile/test_err.json");
 
@@ -8,10 +10,6 @@ const brandMock = require("./MockFile/Brand.json");
 const clientMock = require("./MockFile/Client.json");
 const countriesMock = require("./MockFile/Countries.json");
 const sportsMock = require("./MockFile/Sports.json");
-
-// const insight = require("./MockFile/insight.json");
-// const insightHeader = require("./MockFile/insightHeader.json");
-// const refresh = require("./MockFile/refresh.json");
 
 const action = require("./Model/model");
 const Login = require("./Mock/Login");
@@ -33,6 +31,7 @@ let flow = {
   getCustomersHome: flowAction.SUCCESS,
   getCounties: flowAction.SUCCESS,
   getSports: flowAction.SUCCESS,
+  postCustomer: flowAction.SUCCESS,
 };
 
 const app = express();
@@ -40,18 +39,6 @@ const app = express();
 app.use(cors());
 
 app.use(express.json());
-
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   next();
-// });
-
-// app.use(function(req, res, next) {
-//   req.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-//   req.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   next();
-// });
 
 app.use(function (req, res, next) {
   console.log("method: " + req.method);
@@ -61,7 +48,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.post("/backoffice/auth/login", (req, res) => {
+app.post("/backoffice/login", (req, res) => {
   switch (flow.login) {
     case flowAction.SUCCESS:
       if (flow.isStaff) {
@@ -115,6 +102,26 @@ app.get("/backoffice/customers", (req, res) => {
   }
 });
 
+app.post("/backoffice/customers/", upload.any(), (req, res) => {
+  switch (flow.postCustomer) {
+    case flowAction.SUCCESS:
+      console.log("===================");
+      console.log(
+        "comapany :" + JSON.stringify(JSON.parse(req.body.company), null, 2)
+      );
+      console.log(
+        "user :" + JSON.stringify(JSON.parse(req.body.user), null, 2)
+      );
+      console.log(req.files);
+      res.status(200);
+      res.json(clientMock.Post_New_Customer_Success);
+      break;
+
+    default:
+      break;
+  }
+});
+
 app.get("/backoffice/customers/:id/home/", (req, res) => {
   switch (flow.getCustomersHome) {
     case flowAction.SUCCESS:
@@ -153,7 +160,6 @@ app.get("/backoffice/users", (req, res) => {
 });
 
 app.post("/backoffice/user", (req, res) => {
-  console.log("=======================>>> ", req.body);
   if (req.body.username === "boonpat.papob@gmail.com") {
     res.status(200);
     res.json(insight.success);
@@ -177,7 +183,6 @@ app.post("/backoffice/video_game", (req, res) => {
 });
 
 app.get("/backoffice/customers/55655959595/sponsorships/", (req, res) => {
-  console.log("innnnnnnnnnnnnnnnn");
   switch (flow.getSponsor) {
     case flowAction.SUCCESS:
       console.log(sponsorMock.Get_success);

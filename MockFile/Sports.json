@@ -1,42 +1,156 @@
 {
   "Get_Sports_success": [
-    "Athletics",
-    "Baseball",
-    "Basketball",
-    "Billiards",
-    "Bowling",
-    "Boxing",
-    "Cheer",
-    "Competitive Fitness",
-    "Cricket",
-    "Cycling",
-    "Darts",
-    "Esports",
-    "F1",
-    "Football",
-    "Golf",
-    "Gymnastics",
-    "Hockey",
-    "Horse Riding",
-    "Jiu-Jitsu",
-    "Judo",
-    "Kabaddi",
-    "Karate",
-    "MMA",
-    "Marathon",
-    "Marching",
-    "Motorsports",
-    "NFL",
-    "Olympics",
-    "Rodeo",
-    "Rugby",
-    "Snooker",
-    "Squash",
-    "Surfing",
-    "Table Tennis",
-    "Tennis",
-    "UFC",
-    "Volleyball",
-    "Wrestling"
+    {
+      "sport_code": "uuid",
+      "name": "Athletics"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Baseball"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Basketball"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Billiards"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Bowling"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Boxing"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Cheer"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Competitive Fitness"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Cricket"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Cycling"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Darts"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Esports"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "F1"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Football"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Golf "
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Gymnastics"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Hockey"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Horse Riding"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Jiu-Jitsu"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Judo"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Kabaddi"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Karate"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "MMA"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Marathon"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Marching"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Motorsports"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "NFL"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Olympics"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Rodeo"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Rugby"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Snooker"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Squash"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Surfing"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Table Tennis"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Tennis"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "UFC"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Volleyball"
+    },
+    {
+      "sport_code": "uuid",
+      "name": "Wrestling"
+    }
   ]
 }
