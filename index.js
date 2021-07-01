@@ -107,7 +107,7 @@ app.post("/backoffice/customers/", upload.any(), (req, res) => {
     case flowAction.SUCCESS:
       console.log("===================");
       console.log(
-        "comapany :" + JSON.stringify(JSON.parse(req.body.company), null, 2)
+        "company :" + JSON.stringify(JSON.parse(req.body.company), null, 2)
       );
       console.log(
         "user :" + JSON.stringify(JSON.parse(req.body.user), null, 2)
