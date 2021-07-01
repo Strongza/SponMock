@@ -105,7 +105,6 @@ app.get("/backoffice/customers", (req, res) => {
 app.post("/backoffice/customers/", upload.any(), (req, res) => {
   switch (flow.postCustomer) {
     case flowAction.SUCCESS:
-      console.log("===================");
       console.log(
         "company :" + JSON.stringify(JSON.parse(req.body.company), null, 2)
       );
