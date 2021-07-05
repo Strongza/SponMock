@@ -111,5 +111,13 @@
       "local_event": "local event",
       "event_date": "2021-05-26T07:35:07+0000"
     }
+  },
+  "Post_New_Customer_Success": {
+    "company_name": "Mc Donalds",
+    "territory": "Canada's Yukon Territory",
+    "country": "Canada",
+    "sport": "Football",
+    "customer_code": "CUS001",
+    "logo_url": "https://bucket-name.s3-region.amazonaws.com/customer-logos/customer-code/filename.jpg"
   }
 }
