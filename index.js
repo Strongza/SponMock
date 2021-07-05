@@ -8,6 +8,7 @@ const brandMock = require("./MockFile/Brand.json");
 const clientMock = require("./MockFile/Client.json");
 const countriesMock = require("./MockFile/Countries.json");
 const sportsMock = require("./MockFile/Sports.json");
+const loginMock = require("./MockFile/Login.json");
 
 // const insight = require("./MockFile/insight.json");
 // const insightHeader = require("./MockFile/insightHeader.json");
@@ -61,20 +62,20 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.post("/backoffice/auth/login", (req, res) => {
+app.post("/backoffice/login", (req, res) => {
   switch (flow.login) {
     case flowAction.SUCCESS:
       if (flow.isStaff) {
         res.status(200);
-        res.json(Login.loginStaffMock(action.SUCCESS));
+        res.json(loginMock.Post_Staff_Login_Success);
       } else {
         res.status(200);
-        res.json(Login.loginMock(action.SUCCESS));
+        res.json(loginMock.Post_Login_Success);
       }
       break;
     default:
       res.status(404);
-      res.json(Login.loginMock(action.FAILED));
+      res.json(loginMock.Post_Not_Found_User_Failed);
       break;
   }
 });

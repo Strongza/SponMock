@@ -1,0 +1,26 @@
+{
+  "Post_Login_Success": {
+    "token": "Bearer Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2NvZGUiOiIxIiwibmFtZSI6IkpvaG4gRG9lIiwiYWNjZXNzX2xldmVsIjoxLCJpYXQiOjE1MTYyMzkwMjJ9.Q6vveOborgZnSKlDxOFE04sBd7jy9dMl4Od-1CUNtCQ",
+    "first_name": "Papob",
+    "last_name": "Boonpat",
+    "user_code": "1",
+    "access_level": "1",
+    "status": "A"
+  },
+  "Post_Staff_Login_Success": {
+    "token": "Bearer Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2NvZGUiOiIxIiwibmFtZSI6IkpvaG4gRG9lIiwiYWNjZXNzX2xldmVsIjoxLCJpYXQiOjE1MTYyMzkwMjJ9.Q6vveOborgZnSKlDxOFE04sBd7jy9dMl4Od-1CUNtCQ",
+    "first_name": "Papob",
+    "last_name": "Boonpat",
+    "user_code": "1",
+    "access_level": "2",
+    "status": "A"
+  },
+  "Post_Not_Found_User_Failed": {
+    "error_code": "3",
+    "message": "User is not found"
+  },
+
+  "Post_Login_Refresh_Success": {
+    "refresh_token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2NvZGUiOiIxIiwibmFtZSI6IkpvaG4gRG9lIiwiYWNjZXNzX2xldmVsIjoxLCJpYXQiOjE1MTYyMzkwMjJ9.Q6vveOborgZnSKlDxOFE04sBd7jy9dMl4Od-1CUNtCQ2"
+  }
+}
