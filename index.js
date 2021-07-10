@@ -11,6 +11,7 @@ const clientMock = require("./MockFile/Client.json");
 const countriesMock = require("./MockFile/Countries.json");
 const sportsMock = require("./MockFile/Sports.json");
 const loginMock = require("./MockFile/Login.json");
+const videoGameMock = require("./MockFile/VideoGame.json");
 
 const action = require("./Model/model");
 const Login = require("./Mock/Login");
@@ -33,6 +34,7 @@ let flow = {
   getCounties: flowAction.SUCCESS,
   getSports: flowAction.SUCCESS,
   postCustomer: flowAction.SUCCESS,
+  getVideoGame: flowAction.SUCCESS,
 };
 
 const app = express();
@@ -240,6 +242,17 @@ app.post("/backoffice/brands/search/", (req, res) => {
 
       res.status(200);
       res.json(data);
+      break;
+    default:
+      break;
+  }
+});
+
+app.get("/backoffice/video_game/", (req, res) => {
+  switch (flow.getVideoGame) {
+    case flowAction.SUCCESS:
+      res.status(200);
+      res.json(videoGameMock.Get_Video_Game_Success);
       break;
     default:
       break;

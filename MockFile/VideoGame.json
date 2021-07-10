@@ -1,0 +1,39 @@
+{
+  "Get_Video_Game_Success": [
+    {
+      "video_game_code": "001",
+      "name": "Pro Evolution Soccer",
+      "site_url": "https://www.konami.com/wepes/mobile/en/",
+      "platforms": ["PS4,PS5,PC,XBOX"],
+      "year": "2012"
+    },
+    {
+      "video_game_code": "002",
+      "name": "Call Of Duty: WWI",
+      "site_url": "https://www.konami.com/wepes/mobile/en/",
+      "platforms": ["PS4,PS5,PC,XBOX"],
+      "year": "2021"
+    },
+    {
+      "video_game_code": "003",
+      "name": "Fall Out 4",
+      "site_url": "https://www.konami.com/wepes/mobile/en/",
+      "platforms": ["PS4,PC,XBOX"],
+      "year": "2015"
+    },
+    {
+      "video_game_code": "004",
+      "name": "Assassins Creed Valhalla",
+      "site_url": "https://www.konami.com/wepes/mobile/en/",
+      "platforms": ["PS4,XBOX"],
+      "year": "2013"
+    },
+    {
+      "video_game_code": "as123dsa12321",
+      "name": "Marvel Spiderman",
+      "site_url": "https://www.konami.com/wepes/mobile/en/",
+      "platforms": ["PS4,PS5,PC,XBOX"],
+      "year": "2018"
+    }
+  ]
+}
