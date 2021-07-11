@@ -1,0 +1,16 @@
+{
+	"data_local": [
+		{
+			"name": "Home",
+			"id": 1
+		},
+		{
+			"name": "Away",
+			"id": 2
+		},
+		{
+			"name": "Neutral",
+			"id": 3
+		}
+	]
+}
