@@ -14,6 +14,7 @@ const loginMock = require("./MockFile/Login.json");
 const videoGameMock = require("./MockFile/VideoGame.json");
 const localList = require("./MockFile/Local.json");
 const fixturesMock = require("./Mock/Fixtures.json");
+const athletesMock = require("./MockFile/athletes.json");
 
 const action = require("./Model/model");
 const Login = require("./Mock/Login");
@@ -293,5 +294,31 @@ app.post("/backoffice/customers/fixtures/", (req, res) => {
 
 // == CLIENT FIXTURES ==//
 
+// athlete roster
+app.get("/backoffice/customers/:customerCode/athletes", (req, res) => {
+  res.json(athletesMock.get_athletes_response);
+});
+
+app.post("/backoffice/customers/:customerCode/athletes", (req, res) => {
+  console.log("fuck")
+  res.status(201);
+  res.json(req.body);
+});
+
+app.delete("/backoffice/customers/:customerCode/athletes", (req, res) => {
+  res.status(204);
+  res.json({});
+});
+
+app.put("/backoffice/customers/:customerCode/athletes", (req, res) => {
+  console.log('should return')
+  res.status(200);
+  res.json(req.body);
+});
+
+app.get("/backoffice/customers/:customerCode/athletes/:athleteCode", (req, res) => {
+  res.status(200);
+  res.json(athletesMock.get_athlete_response);
+});
 const port = process.env.PORT || 64822;
 app.listen(port, () => console.log(`Listening on port${port}...`));

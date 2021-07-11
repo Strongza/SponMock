@@ -1,0 +1,76 @@
+{
+  "get_athletes_response": [
+    {
+      "athlete_code": "d81f6f90-ba69-45a8-b52f-0002e30e4183",
+      "name": "Jose Luis Chilavert",
+      "nationality": "Paraguayan",
+      "bio": "José Luis Félix Chilavert González is a Paraguayan former professional footballer who played as a goalkeeper",
+      "social_media_profiles": {
+        "facebook": "Chilavert",
+        "instagram": "Chilavert",
+        "twitter": "Chilavert",
+        "tiktok": "Chilavert",
+        "snapchat": "Chilavert",
+        "linkedin": "Chilavert"
+      },
+      "profile_url": "https://i.pravatar.cc/300"
+    }
+  ],
+  "post_athlete_body": {
+    "name": "Jose Luis Chilavert",
+    "nationality": "Paraguayan",
+    "bio": "José Luis Félix Chilavert González is a Paraguayan former professional footballer who played as a goalkeeper",
+    "social_media_profiles": {
+      "facebook": "Chilavert",
+      "instagram": "Chilavert",
+      "twitter": "Chilavert",
+      "tiktok": "Chilavert",
+      "snapchat": "Chilavert",
+      "linkedin": "Chilavert"
+    }
+  },
+  "error_response_get_athelete": {
+    "error_code": "6",
+    "message": "Athlete not found"
+  },
+  "get_athlete_response": {
+    "name": "Jose Luis Chilavert",
+    "nationality": "Paraguayan",
+    "bio": "José Luis Félix Chilavert González is a Paraguayan former professional footballer who played as a goalkeeper",
+    "social_media_profiles": {
+      "facebook": "Chilavert",
+      "instagram": "Chilavert",
+      "twitter": "Chilavert",
+      "tiktok": "Chilavert",
+      "snapchat": "Chilavert",
+      "linkedin": "Chilavert"
+    },
+    "profile_url": "https://i.pravatar.cc/300"
+  },
+  "error_400_delete_athelete": {
+    "error_code": "2",
+    "message": [
+      "Field athlete_code is missing"
+    ]
+  },
+  "error_404_delete_athelete": {
+    "error_code": "6",
+    "message": "Athlete not found"
+  },
+  "error_500_response": {
+    "error_code": "1",
+    "message": "Error message"
+  },
+  "error_401_response": {
+    "error_code": "2",
+    "message": "Staff token don't has permission to access this endpoint"
+  },
+  "error_403_response": {
+    "error_code": "5",
+    "message": "User is not allowed"
+  },
+  "error_409_response": {
+    "error_code": "3",
+    "message": "Duplicate does not allow"
+  }
+}
