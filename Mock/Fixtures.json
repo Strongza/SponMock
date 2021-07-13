@@ -1,9 +1,9 @@
 {
 	"Post_Fixtures": {
-		"file_image": "",
-		"tournament": "TV Show",
-		"local": "",
-		"date": "",
-		"name": "MU Ltd."
+		"fixture_name": "UU.test",
+		"image_url": "www.w3schools.com",
+		"tournament_type": "TV",
+		"local": "Home",
+		"event_date": "20201707"
 	}
 }

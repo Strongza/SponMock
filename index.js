@@ -282,7 +282,7 @@ app.get("/backoffice/fixtures/locals/", (req, res) => {
 app.post("/backoffice/customers/fixtures/", (req, res) => {
 	switch (flow.postFixtures) {
 		case flowAction.SUCCESS:
-			console.log(req);
+			console.log("REQ =>",req);
 			res.status(200);
 			res.json(fixturesMock.Post_Fixtures);
 			break;
